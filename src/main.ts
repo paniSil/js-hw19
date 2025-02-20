@@ -15,9 +15,8 @@ console.log('#19. TypeScript homework example file')
  *
  */
 
-function sumArray(numbers: number[]) : number {
-  const res: number = numbers.reduce((sum, n) => sum + n);
-  return res;
+function sumArray(numbers: number[]): number {
+  return numbers.reduce((sum, n) => sum + n, 0);
 }
 
 // Вивід до консолі для демонстрації
@@ -40,9 +39,13 @@ function sumArray(numbers: number[]) : number {
  *
  */
 
-type User = {}
+type User = {
+  name: string;
+  age: number;
+  isActive: boolean;
+};
 
-function createUser() {
+function createUser(name: string, age: number, isActive: boolean) {
   // code here
 }
 
