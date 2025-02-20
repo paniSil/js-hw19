@@ -15,8 +15,9 @@ console.log('#19. TypeScript homework example file')
  *
  */
 
-function sumArray(numbers: number[]) {
-  return numbers.reduce((sum, n) => sum + n);
+function sumArray(numbers: number[]) : number {
+  const res: number = numbers.reduce((sum, n) => sum + n);
+  return res;
 }
 
 // Вивід до консолі для демонстрації
