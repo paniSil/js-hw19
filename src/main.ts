@@ -40,13 +40,14 @@ function sumArray(numbers: number[]): number {
  */
 
 type User = {
-  name: string;
-  age: number;
-  isActive: boolean;
-};
+  name: string 
+  age: number 
+  isActive: boolean 
+}
 
-function createUser(name: string, age: number, isActive: boolean) {
-  // code here
+function createUser(name: string, age: number, isActive: boolean = true): User {
+  const user: User = { name, age, isActive };
+  return { name, age, isActive };
 }
 
 // const newUser = createUser('Анна', 25, true)
@@ -74,10 +75,18 @@ function createUser(name: string, age: number, isActive: boolean) {
  *
  */
 
-enum OrderStatus {}
+enum OrderStatus {
+  Pending = 'Замовлення очікує на обробку',
+  Shipped = 'Замовлення було відправлено',
+  Delivered = 'Замовлення доставлено',
+  Cancelled = 'Замовлення скасовано'
+}
 
-function getOrderStatus() {
-  // code here
+function getOrderStatus(status: OrderStatus): string {
+  if (!status) {
+    throw new Error('Невідомий статус замовлення');
+  }
+  return `${status}`;
 }
 
 // Приклад виклику функції
